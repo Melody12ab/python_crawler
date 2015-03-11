@@ -1,0 +1,78 @@
+﻿文件说明：
+1. weibo.py 主程序。
+	可以自行更改 168 行的用户名和密码。
+2. model.py 与数据库相关的操作。
+	**必须**修改 40 行开始的配置，包括 数据库名，用户名，密码。
+3. maria.sql 数据库的结构。
+4. data_dump.sql 我之前抓那位老师的数据，可以拿来测试用。
+
+
+依赖说明：
+1. python 3.3
+2. 第三方 python 包：
+	`beautifulsoup4` 解析 html。
+	`selenium` 调用浏览器。
+	`mysql-connector-python` 连接 mysql。
+	`jieba` 提取关键字。
+3. chrome。
+
+
+==================================================
+
+
+调用说明：
+1. 导入 `import weibo`。
+2. 创建`Weibo`实例。
+3. 调用相应方法。
+
+
+接口说明：
+1. `weibo.get_topics()`
+	获取所有热门话题。
+
+2. `weibo.get_topic_posts(topic_id)`
+	获取与话题相关的微博。
+	topic_id 是话题 id。
+
+3. `weibo.get_person(url)`
+	获取用户所有微博。
+	url 是用户的微博地址。
+
+4. `weibo.get_post_path(url)`
+	获取微博传播路径。
+	url 是某条微博的链接。
+
+5. `weibo.get_fans(user_id)`
+	获取用户的粉丝。
+	user_id 是用户 id。
+	注：只能获取前 50 页，也就是 1000 个粉丝。微博只提供了这么多数据。
+
+6. `weibo.get_follows(user_id)`
+	获取用户关注的人。
+	user_id 是用户 id。
+	注：只能获取前 100 页，也就是 2000 个关注。微博只提供了这么多数据。
+
+7. `analyse(user_id)`
+	分析用户兴趣。
+	user_id 是用户 id。
+	注：返回值是按照兴趣度排序过的，用户对靠前的关键字更感兴趣。
+
+
+微博找人算是大体写好了。
+
+Weibo().find_people(   查找条件     )
+
+里面条件必须这么写
+
+Weibo.find_people(
+prov="北京",
+city="不限",
+sex="男"
+)
+
+可以指定的选项有 prov,city, sex, age, tags, scho, comp, single, sexual, blood, isv
+分别是 省，市，性别，年龄，个人标签（多个用空格隔开），学校，公司，感情状况，性取向，血型，微博身份
+和 http://weibo.com/find/f  是一样，可选项也一样，
+选项可以为空，如果选项的值不对，会用默认值去查找。
+
+最后返回的是用户的 uid ，这个是要拿去找详细信息还是其他用处，看后面怎么用了。
