@@ -1683,7 +1683,7 @@ class Weibo:
 
 
 if __name__ == '__main__':
-    a = Weibo("357170967@qq.com","zx8868108")  
+    a = Weibo("********","******")  
     #http://weibo.com/u/2369862891 http://weibo.com/u/1697535297  http://www.weibo.com/maylose 1228329630 赵晓 http://weibo.com/zhaoxiaolovegod 1195818302 http://weibo.com/duansimon 2584547100
     #a.get_person("http://weibo.com/1648138610") #可用
     #a._update_person_info("1648138610")    #可用（存在部分问题）
