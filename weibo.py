@@ -114,7 +114,7 @@ class Browser:
 
 
 class Weibo:
-    def __init__(self, username="mathwebteam@sina.com", password="mathwebteam"):
+    def __init__(self, username="*****@sina.com", password="******"):
         self.br = Browser()
         self.db = model.Database()
         self.re_person = re.compile(
