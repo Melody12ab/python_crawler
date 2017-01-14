@@ -37,8 +37,8 @@ def getYKCookie(username,password):
     cookiestr = ';'.join(item for item in cookie)
     return cookiestr
 
-username='357170967@qq.com'
-password='zx8868108//'
+username='***'
+password='****'
 
 cookiestr=getYKCookie(username,password)
 print(cookiestr)

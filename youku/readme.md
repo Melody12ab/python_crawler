@@ -5,7 +5,7 @@
 <pre>
 sudo pip install -U selenium 
 </pre>
-- 操作 chrome 浏览器需要有 ChromeDriver ,因此下载chromedriver到<code>/usr/bin</code>目录
+- 操作 chrome 浏览器需要有 ChromeDriver ,因此下载chromedriver到<code>/usr/bin</code>目录，[下载地址][2]（需要翻墙）
 
 开始写代码部分：
 <pre>
@@ -51,4 +51,5 @@ print(cookiestr)
 
 
 [1]: http://selenium-python.readthedocs.io/installation.html
+[2]: http://chromedriver.storage.googleapis.com/index.html?path=2.9/
 
